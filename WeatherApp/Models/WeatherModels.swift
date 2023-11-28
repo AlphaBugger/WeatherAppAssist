@@ -41,4 +41,5 @@ struct List:Codable{
     let dt: TimeInterval
     let main: Main
     let weather: [WeatherDescription]
+    let wind: Wind
 }

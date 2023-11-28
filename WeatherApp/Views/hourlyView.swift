@@ -9,6 +9,7 @@ import UIKit
 @IBDesignable
 final class hourlyView: UIView {
     
+    @IBOutlet weak var currentDate: DateView!
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.configureView()

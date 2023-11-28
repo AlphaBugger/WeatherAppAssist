@@ -3,6 +3,7 @@
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -33,7 +34,8 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XnJ-cW-UHj">
                                                 <rect key="frame" x="0.0" y="0.0" width="47" height="34.333333333333336"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system">
+                                                <buttonConfiguration key="configuration" style="plain">
+                                                    <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
                                             </button>
@@ -57,7 +59,8 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C3c-qn-r6r">
                                                 <rect key="frame" x="310.33333333333331" y="0.0" width="47.666666666666686" height="34.333333333333336"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="ellipsis" catalog="system">
+                                                <buttonConfiguration key="configuration" style="plain">
+                                                    <imageReference key="image" image="ellipsis" catalog="system" symbolScale="large"/>
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
                                             </button>
@@ -285,7 +288,9 @@
                         <outlet property="bottomBarCompact" destination="kQQ-p1-xWq" id="Veq-Ih-ZlO"/>
                         <outlet property="bottomBarDecompact" destination="afV-Bw-CSa" id="lEi-Ty-ySK"/>
                         <outlet property="bottomButtonDecompact" destination="cTB-dw-AbD" id="0cc-Bm-ZO4"/>
+                        <outlet property="currentDate" destination="sTZ-ha-hid" id="eiG-QF-u1y"/>
                         <outlet property="heightConstraint" destination="6n9-y1-exa" id="IKK-ZT-3vK"/>
+                        <outlet property="hourlyView" destination="ucN-qh-UyE" id="9Wn-f3-YQ8"/>
                         <outlet property="humidityIndicator" destination="Xw7-Dv-FKr" id="NWp-gG-Rs5"/>
                         <outlet property="topWeatherView" destination="fIk-kJ-yln" id="5nD-gu-yes"/>
                     </connections>

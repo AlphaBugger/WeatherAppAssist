@@ -9,6 +9,8 @@ import UIKit
 @IBDesignable
 final class DateView: UIView {
     
+    @IBOutlet weak var dayNameLabel: UILabel!
+    @IBOutlet weak var currentMonthAndDay: UILabel!
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.configureView()

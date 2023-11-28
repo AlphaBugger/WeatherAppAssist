@@ -22,7 +22,24 @@ func formateDate(dateString: String)->Result<(day:Int, hour:Int), DateError>{
         return .success((day:dayComponent, hour:hourComponent))
     }else{
         return .failure(.invalidFormat)
+        
     }
-    
 }
+
+    
+func getDateForLabel(dateString: String)->Result<(day:Int, month:String, dayName:String), DateError>{
+        let dateFormater = DateFormatter()
+        dateFormater.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        if let date = dateFormater.date(from: dateString){
+            let calendar = Calendar.current
+            let dayComponent = calendar.component(.day, from: date)
+            dateFormater.dateFormat = "MMM"
+            let monthComponent = dateFormater.string(from: date)
+            dateFormater.dateFormat = "EEE"
+            let dayName = dateFormater.string(from: date)
+            return .success((day:dayComponent, month:monthComponent, dayName: dayName))
+        }else{
+            return .failure(.invalidFormat)
+        }
+    }
 

@@ -12,6 +12,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var CityName: UILabel!
     @IBOutlet weak var TopTemperature: UILabel!
+    @IBOutlet weak var currentDate: DateView!
     @IBOutlet weak var WeatherDescription: UILabel!
     @IBOutlet weak var WindIndicator: indicatorView!
     
@@ -20,6 +21,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var RainIndicator: indicatorView!
     @IBOutlet weak var humidityIndicator: indicatorView!
     @IBOutlet weak var arrowView: UIImageView!
+    @IBOutlet weak var hourlyView: hourlyView!
     
     
     var weatherManager = WeatherManager()
