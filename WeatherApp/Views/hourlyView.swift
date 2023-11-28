@@ -1,21 +1,13 @@
 //
-//  indicatorView.swift
+//  hourlyView.swift
 //  WeatherApp
 //
-//  Created by Eduard Zepciuc on 24.11.2023.
+//  Created by Eduard Zepciuc on 28.11.2023.
 //
 
 import UIKit
 @IBDesignable
-final class indicatorView: UIView {
-    
-    
-    @IBOutlet weak var unit: UILabel!
-    
-    @IBOutlet weak var unitName: UILabel!
-    
-    @IBOutlet weak var unitImage: UIImageView!
-    
+final class hourlyView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,9 +20,8 @@ final class indicatorView: UIView {
         }
 
     private func configureView() {
-        guard let view = self.loadViewFromNib(nibName: "indicatorView") else {return}
+        guard let view = self.loadViewFromNib(nibName: "hourlyView") else {return}
         view.frame = self.bounds
         self.addSubview(view)
     }
 }
-

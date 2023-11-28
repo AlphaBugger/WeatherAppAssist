@@ -6,25 +6,22 @@
 //
 
 import UIKit
-
+@IBDesignable
 class weatherTopView: UIView {
 
-    @IBOutlet var weatherView: UIView!
     override init(frame: CGRect) {
-            super.init(frame: frame)
-            commonInit()
+        super.init(frame: frame)
+        self.configureView()
+    }
+
+        required init?(coder: NSCoder) {
+            super.init(coder: coder)
+            self.configureView()
         }
 
-        required init?(coder aDecoder: NSCoder) {
-            super.init(coder: aDecoder)
-            commonInit()
+        private func configureView() {
+            guard let view = self.loadViewFromNib(nibName: "weatherTopView") else {return}
+            view.frame = self.bounds
+            self.addSubview(view)
         }
-
-        private func commonInit() {
-            Bundle.main.loadNibNamed("weatherTopView", owner: self, options: nil)
-            addSubview(weatherView)
-            weatherView.frame = bounds
-            weatherView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        }
-
 }

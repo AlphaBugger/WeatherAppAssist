@@ -6,21 +6,63 @@
 //
 
 import UIKit
-
-class ViewController: UIViewController, WeatherManagerDelegate {
+class ViewController: UIViewController, UIScrollViewDelegate {
     
+    @IBOutlet weak var WeatherStatusImage: UIImageView!
     
+    @IBOutlet weak var CityName: UILabel!
+    @IBOutlet weak var TopTemperature: UILabel!
+    @IBOutlet weak var WeatherDescription: UILabel!
+    @IBOutlet weak var WindIndicator: indicatorView!
     
+    @IBOutlet weak var PressureIndicator: indicatorView!
+    
+    @IBOutlet weak var RainIndicator: indicatorView!
+    @IBOutlet weak var humidityIndicator: indicatorView!
+    @IBOutlet weak var arrowView: UIImageView!
     
     
     var weatherManager = WeatherManager()
     
     
     
-    @IBOutlet weak var topWeatherIcon: UIStackView!
+    
+        
+    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var topWeatherView: UIView!
+    
+    @IBOutlet weak var bottomBarCompact: UIButton!
+    @IBOutlet weak var bottomButtonDecompact: UIButton!
+    @IBOutlet weak var BottomBar: UIView!
+    @IBOutlet weak var bottomBarDecompact: UIView!
+    
+ 
+    @IBAction func BottomBarButtonDecompact(_ sender: UIButton) {
+        heightConstraint.constant = 565
+        BottomBar.isHidden=false
+        bottomBarDecompact.isHidden = true
+        bottomBarCompact.isEnabled = true
+        bottomButtonDecompact.isEnabled = false
+        
+    }
+    
+    @IBAction func BottomBarButton(_ sender: UIButton) {
+        heightConstraint.constant = 353
+        BottomBar.isHidden=true
+        bottomBarDecompact.isHidden = false
+        bottomBarCompact.isEnabled = false
+        bottomButtonDecompact.isEnabled = true
+    }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        topWeatherView.layer.cornerRadius = 30
+        
         weatherManager.delegate = self
+        
         if NetworkManager.shared.isInternetAvailable {
             print("Internet is available.")
             print("loaded")
@@ -47,17 +89,6 @@ class ViewController: UIViewController, WeatherManagerDelegate {
         
     }
     
-    func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherViewModel) {
-        for item in weather.hourlyForecast{
-            print(item.main.temp)
-            
-        }
-        weather.getDailyForecast()
-        
-    }
-    func didFailWithError(error: Error) {
-        print(error)
-    }
 
 }
 

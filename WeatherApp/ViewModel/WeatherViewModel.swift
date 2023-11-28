@@ -9,7 +9,8 @@ import Foundation
 import CoreData
 
 //Main ViewModel for Weather
-struct WeatherViewModel{
+class WeatherViewModel{
+    
     let weatherData: WeatherData
     let forecastList: [List]
     let hourlyForecast: [List]
@@ -21,7 +22,9 @@ struct WeatherViewModel{
         self.hourlyForecast = Array(forecastList.prefix(8))
     }
     
-    
+    func getTopWeatherTemperature()->Double{
+        return self.forecastList[0].main.temp
+    }
     func getDailyForecast(){
         let currentDate = Date()
         let calendar = Calendar.current

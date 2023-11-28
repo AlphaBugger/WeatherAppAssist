@@ -14,42 +14,10 @@
             filePath = "WeatherApp/ViewModel/WeatherViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
             landmarkName = "WeatherViewModel"
-            landmarkType = "14">
-            <Locations>
-               <Location
-                  uuid = "938B8E3A-AAE2-49B5-B20D-959A66BF860C - 841a9522bd893aa8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "WeatherApp.WeatherViewModel.__allocating_init(weatherData: WeatherApp.WeatherData) -&gt; WeatherApp.WeatherViewModel"
-                  moduleName = "WeatherApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/eduard/Desktop/Desktop%20-%20MacBook%20Pro/Dev/Edi/WeatherApp/WeatherApp/ViewModel/WeatherViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "48">
-               </Location>
-               <Location
-                  uuid = "938B8E3A-AAE2-49B5-B20D-959A66BF860C - 4c51113f4c11d734"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "WeatherApp.WeatherViewModel.init(weatherData: WeatherApp.WeatherData) -&gt; WeatherApp.WeatherViewModel"
-                  moduleName = "WeatherApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/eduard/Desktop/Desktop%20-%20MacBook%20Pro/Dev/Edi/WeatherApp/WeatherApp/ViewModel/WeatherViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "17"
-                  endingLineNumber = "17"
-                  offsetFromSymbolStart = "84">
-               </Location>
-            </Locations>
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
