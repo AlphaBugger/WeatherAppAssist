@@ -10,6 +10,27 @@ import UIKit
 final class hourlyView: UIView {
     
     @IBOutlet weak var currentDate: DateView!
+    
+    @IBOutlet weak var hourZero: hourlyWeatherView!
+    
+    @IBOutlet weak var hourOne: hourlyWeatherView!
+    
+    
+    @IBOutlet weak var hourTwo: hourlyWeatherView!
+    
+    @IBOutlet weak var hourThree: hourlyWeatherView!
+    
+    @IBOutlet weak var hourFour: hourlyWeatherView!
+    
+    @IBOutlet weak var hourFive: hourlyWeatherView!
+    
+    @IBOutlet weak var hourSix: hourlyWeatherView!
+    
+    @IBOutlet weak var hourSeven
+    : hourlyWeatherView!
+    
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.configureView()

@@ -29,7 +29,7 @@ extension ViewController: WeatherManagerDelegate{
             
             self.humidityIndicator.unitImage.image = UIImage(systemName: "drop.degreesign")
             self.humidityIndicator.unitName.text = "Humidity"
-            self.humidityIndicator.unit.text = String(format:"%.1f%%",weather.forecastList[0].main.humidity)
+            self.humidityIndicator.unit.text = "\(String(weather.forecastList[0].main.humidity))%"
             
             
             switch getDateForLabel(dateString: weather.forecastList[0].dt_txt){
@@ -43,14 +43,17 @@ extension ViewController: WeatherManagerDelegate{
             }
             self.TopTemperature.text = String(format:"%.0f °",weather.forecastList[0].main.temp)
             
+            for forecastItem in weather.forecastList{
+                    
+                }
+            }
 
         }
         
-        
-}
-        
-        func didFailWithError(error: Error) {
-            print(error)
-        }
-}
+    func didFailWithError(error: Error) {
+        print(error)
+    }
 
+}
+        
+        

@@ -42,20 +42,13 @@ class WeatherViewModel{
             case .failure(_):
                 print("error")
             }
-                if hour == 0{
-                    tempDay = items.main.temp
-                    print("Day: \(day), High: \(tempDay)")
-                }else if hour == 21{
-                    tempNight = items.main.temp
-                    print("Day: \(day), Low: \(tempNight)")
-                }
-            
-            
         }
-        
+            
+            
     }
-    
-    
+        
 }
+    
+    
 
 

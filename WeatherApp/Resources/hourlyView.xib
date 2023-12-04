@@ -10,7 +10,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="hourlyView" customModule="WeatherApp" customModuleProvider="target">
             <connections>
-                <outlet property="currentDate" destination="cVN-zF-n5F" id="65y-co-Fot"/>
+                <outlet property="currentDate" destination="cVN-zF-n5F" id="gxM-Ea-WFI"/>
+                <outlet property="hourOne" destination="QdG-h0-TcR" id="UpY-gX-PvI"/>
+                <outlet property="hourThree" destination="Hw3-So-xdN" id="B02-0b-dFo"/>
+                <outlet property="hourZero" destination="6az-Ud-5II" id="96j-fl-zjE"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -31,31 +34,31 @@
                                             <rect key="frame" x="0.0" y="0.0" width="72" height="101"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QdG-h0-TcR" customClass="hourlyWeatherView" customModule="WeatherApp" customModuleProvider="target">
+                                        <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QdG-h0-TcR" customClass="hourlyWeatherView" customModule="WeatherApp" customModuleProvider="target">
                                             <rect key="frame" x="80" y="0.0" width="72" height="101"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hw3-So-xdN" customClass="hourlyWeatherView" customModule="WeatherApp" customModuleProvider="target">
+                                        <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hw3-So-xdN" customClass="hourlyWeatherView" customModule="WeatherApp" customModuleProvider="target">
                                             <rect key="frame" x="160" y="0.0" width="72" height="101"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pQb-m0-ZZQ" customClass="hourlyWeatherView" customModule="WeatherApp" customModuleProvider="target">
+                                        <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pQb-m0-ZZQ" customClass="hourlyWeatherView" customModule="WeatherApp" customModuleProvider="target">
                                             <rect key="frame" x="240" y="0.0" width="72" height="101"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lr8-ej-Bf6" customClass="hourlyWeatherView" customModule="WeatherApp" customModuleProvider="target">
+                                        <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lr8-ej-Bf6" customClass="hourlyWeatherView" customModule="WeatherApp" customModuleProvider="target">
                                             <rect key="frame" x="320" y="0.0" width="72" height="101"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1yZ-20-cbJ" customClass="hourlyWeatherView" customModule="WeatherApp" customModuleProvider="target">
+                                        <view tag="5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1yZ-20-cbJ" customClass="hourlyWeatherView" customModule="WeatherApp" customModuleProvider="target">
                                             <rect key="frame" x="400" y="0.0" width="72" height="101"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ROR-hJ-xqF" customClass="hourlyWeatherView" customModule="WeatherApp" customModuleProvider="target">
+                                        <view tag="6" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ROR-hJ-xqF" customClass="hourlyWeatherView" customModule="WeatherApp" customModuleProvider="target">
                                             <rect key="frame" x="480" y="0.0" width="72" height="101"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r8f-4F-Myi" customClass="hourlyWeatherView" customModule="WeatherApp" customModuleProvider="target">
+                                        <view tag="7" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r8f-4F-Myi" customClass="hourlyWeatherView" customModule="WeatherApp" customModuleProvider="target">
                                             <rect key="frame" x="560" y="0.0" width="72" height="101"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>

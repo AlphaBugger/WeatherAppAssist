@@ -6,10 +6,11 @@
 //
 
 import UIKit
-class ViewController: UIViewController, UIScrollViewDelegate {
+class ViewController: UIViewController {
     
     @IBOutlet weak var WeatherStatusImage: UIImageView!
     
+    @IBOutlet weak var dailyStackView: UIStackView!
     @IBOutlet weak var CityName: UILabel!
     @IBOutlet weak var TopTemperature: UILabel!
     @IBOutlet weak var currentDate: DateView!
@@ -34,33 +35,33 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var topWeatherView: UIView!
     
     @IBOutlet weak var bottomBarCompact: UIButton!
-    @IBOutlet weak var bottomButtonDecompact: UIButton!
     @IBOutlet weak var BottomBar: UIView!
-    @IBOutlet weak var bottomBarDecompact: UIView!
     
  
-    @IBAction func BottomBarButtonDecompact(_ sender: UIButton) {
-        heightConstraint.constant = 565
-        BottomBar.isHidden=false
-        bottomBarDecompact.isHidden = true
-        bottomBarCompact.isEnabled = true
-        bottomButtonDecompact.isEnabled = false
-        
-    }
-    
-    @IBAction func BottomBarButton(_ sender: UIButton) {
-        heightConstraint.constant = 353
-        BottomBar.isHidden=true
-        bottomBarDecompact.isHidden = false
-        bottomBarCompact.isEnabled = false
-        bottomButtonDecompact.isEnabled = true
-    }
+//    @IBAction func BottomBarButtonDecompact(_ sender: UIButton) {
+//        heightConstraint.constant = 565
+//        BottomBar.isHidden=false
+//        bottomBarCompact.isEnabled = true
+//    }
+//    
+//    @IBAction func BottomBarButton(_ sender: UIButton) {
+//        heightConstraint.constant = 353
+//        BottomBar.isHidden=true
+//        bottomBarCompact.isEnabled = false
+//    }
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let swipeGestureUp = UISwipeGestureRecognizer(target: self, action: #selector(didSwipe(_ :)))
+        swipeGestureUp.direction = .up
         
+        let swipeGestureDown = UISwipeGestureRecognizer(target: self, action: #selector(didSwipe(_ :)))
+        swipeGestureDown.direction = .down
+        
+        view.addGestureRecognizer(swipeGestureUp)
+        view.addGestureRecognizer(swipeGestureDown)
         topWeatherView.layer.cornerRadius = 30
         
         weatherManager.delegate = self
@@ -89,6 +90,26 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         }
         
         
+    }
+    
+    @objc func didSwipe(_ gesture: UIGestureRecognizer) {
+        print(gesture)
+        guard let gesture = gesture as? UISwipeGestureRecognizer else {
+            return
+        }
+        
+        switch gesture.direction {
+        case .up:
+            BottomBar.isHidden = false
+            heightConstraint.constant = 353
+            dailyStackView.axis = .horizontal
+        case .down:
+            BottomBar.isHidden = true
+            heightConstraint.constant = 565
+            dailyStackView.axis = .vertical
+        default:
+            break
+        }
     }
     
 
