@@ -6,50 +6,37 @@
 //
 
 import UIKit
-class ViewController: UIViewController {
+class WeatherViewController: UIViewController {
+    
+    
     
     @IBOutlet weak var WeatherStatusImage: UIImageView!
     
+    @IBOutlet weak var dailyForecast: WeeklyForecastView!
+    @IBOutlet weak var hourlyViewBottom: NSLayoutConstraint!
     @IBOutlet weak var dailyStackView: UIStackView!
     @IBOutlet weak var CityName: UILabel!
     @IBOutlet weak var TopTemperature: UILabel!
     @IBOutlet weak var currentDate: DateView!
     @IBOutlet weak var WeatherDescription: UILabel!
     @IBOutlet weak var WindIndicator: indicatorView!
-    
     @IBOutlet weak var PressureIndicator: indicatorView!
-    
     @IBOutlet weak var RainIndicator: indicatorView!
     @IBOutlet weak var humidityIndicator: indicatorView!
     @IBOutlet weak var arrowView: UIImageView!
-    @IBOutlet weak var hourlyView: hourlyView!
-    
-    
-    var weatherManager = WeatherManager()
-    
-    
-    
-    
-        
-    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var hourlyView: WeatherView!
+
     @IBOutlet weak var topWeatherView: UIView!
-    
     @IBOutlet weak var bottomBarCompact: UIButton!
     @IBOutlet weak var BottomBar: UIView!
     
- 
-//    @IBAction func BottomBarButtonDecompact(_ sender: UIButton) {
-//        heightConstraint.constant = 565
-//        BottomBar.isHidden=false
-//        bottomBarCompact.isEnabled = true
-//    }
-//    
-//    @IBAction func BottomBarButton(_ sender: UIButton) {
-//        heightConstraint.constant = 353
-//        BottomBar.isHidden=true
-//        bottomBarCompact.isEnabled = false
-//    }
-
+//    var weatherViewModel: WeatherViewModel = WeatherViewModel(weatherData: <#T##WeatherData#>)
+    
+    
+    
+    
+    
+    var weatherManager = WeatherManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +49,7 @@ class ViewController: UIViewController {
         
         view.addGestureRecognizer(swipeGestureUp)
         view.addGestureRecognizer(swipeGestureDown)
+        
         topWeatherView.layer.cornerRadius = 30
         
         weatherManager.delegate = self
@@ -80,7 +68,7 @@ class ViewController: UIViewController {
                         do {
                             // Decode the JSON data into your model or use it as needed
                             if let weather = weatherManager.parseJSON(jsonData){
-                                weatherManager.delegate?.didUpdateWeather(weatherManager, weather: weather)
+                                self.didUpdateWeather(weatherManager, weather: weather)
                             }
                         } catch {
                             print("Error decoding JSON: \(error)")
@@ -93,23 +81,39 @@ class ViewController: UIViewController {
     }
     
     @objc func didSwipe(_ gesture: UIGestureRecognizer) {
-        print(gesture)
         guard let gesture = gesture as? UISwipeGestureRecognizer else {
             return
         }
         
         switch gesture.direction {
-        case .up:
-            BottomBar.isHidden = false
-            heightConstraint.constant = 353
-            dailyStackView.axis = .horizontal
-        case .down:
-            BottomBar.isHidden = true
-            heightConstraint.constant = 565
-            dailyStackView.axis = .vertical
-        default:
-            break
+            case .up:
+                self.hourlyViewBottom.constant = 215
+                
+                UIView.animate(withDuration: 0.5) {
+                    self.view.layoutIfNeeded()
+                    self.dailyStackView.axis = .horizontal
+                } completion: { finished in
+                    if finished {
+                        self.BottomBar.isHidden = true
+                    }
+                }
+                
+            case .down:
+                self.hourlyViewBottom.constant = 0
+                
+                UIView.animate(withDuration: 0.5) {
+                    self.view.layoutIfNeeded()
+                    self.dailyStackView.axis = .vertical
+                } completion: { finished in
+                    if finished {
+                        self.BottomBar.isHidden = false
+                    }
+                }
+                
+            default:
+                break
         }
+        
     }
     
 

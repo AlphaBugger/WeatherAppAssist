@@ -10,6 +10,16 @@ import Foundation
 enum DateError: Error{
     case invalidFormat
 }
+func getCurrentTime() -> String {
+    let currentDate = Date()
+
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "E | d MMM" // Adjust the format as needed
+
+    let currentTimeString = dateFormatter.string(from: currentDate)
+
+    return currentTimeString
+}
 
 func formateDate(dateString: String)->Result<(day:Int, hour:Int), DateError>{
     

@@ -39,7 +39,7 @@ final class hourlyView: UIView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.configureView()
-        }
+    }
 
     private func configureView() {
         guard let view = self.loadViewFromNib(nibName: "hourlyView") else {return}

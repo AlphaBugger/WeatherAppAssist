@@ -9,12 +9,14 @@ import Foundation
 import UIKit
 
 
-extension ViewController: WeatherManagerDelegate{
+extension WeatherViewController: WeatherManagerDelegate{
     
     
     
     func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherViewModel) {
         DispatchQueue.main.async {
+            self.hourlyView.updateWeatherDataForNext24Hours(with: weather.weatherData)
+            self.dailyForecast.updateForecasts(with: weather.weatherData)
             self.WindIndicator.unitImage.image = UIImage(systemName:"location.fill")
             self.WindIndicator.unitName.text = "Wind"
             self.WindIndicator.unit.text = String(format:"%.1f km/h",weather.forecastList[0].wind.speed)
@@ -36,8 +38,6 @@ extension ViewController: WeatherManagerDelegate{
             case .success(let result):
                 self.currentDate.dayNameLabel.text = result.dayName
                 self.currentDate.currentMonthAndDay.text = String("\(result.month) \(result.day)")
-                self.hourlyView.currentDate.dayNameLabel.text = result.dayName
-                self.hourlyView.currentDate.currentMonthAndDay.text = String("\(result.month) \(result.day)")
             case .failure(_):
                 print("error")
             }
